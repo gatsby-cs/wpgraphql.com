@@ -11,7 +11,6 @@ import Accordion from "../components/landingpage/Accordion"
 import TwoColumn from "../components/landingpage/TwoColumn"
 import Hero from "../components/landingpage/Hero"
 import FeatureList from "../components/landingpage/FeatureList"
-import WorksWithJS from "../components/landingpage/WorksWithJS"
 
 const AcfHero = () => (
   <Hero
@@ -279,11 +278,6 @@ const Acf = () => {
           <HowItWorks />
           <SupportedFields />
           <Why />
-          <WorksWithJS>
-            <Heading as="h2">
-              Works Great with Popular JavaScript Libraries
-            </Heading>
-          </WorksWithJS>
           <Pricing />
           <Faq />
         </Box>

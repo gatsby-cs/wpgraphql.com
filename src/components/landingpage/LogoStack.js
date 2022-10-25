@@ -35,14 +35,7 @@ const LogoStack = ({ logos, ...props }) => {
                       loading="lazy"
                       {...logo.imageprops}
                     />
-                  ) : (
-                    <GatsbyImage
-                      alt={logo.alt}
-                      image={logo.image?.childImageSharp?.gatsbyImageData}
-                      loading="lazy"
-                      {...logo.imageprops}
-                    />
-                  )}
+                  ) : null}
                 </>
               </Tooltip>
             </a>

@@ -17,7 +17,6 @@ import Layout from "../components/Layout"
 import Container from "../components/Container"
 import Testimonials from "../components/HomePage/Testimonials"
 import WhosUsing from "../components/HomePage/WhosUsing"
-import WorksWithJS from "../components/landingpage/WorksWithJS"
 import Meta from "../components/Meta"
 
 const Home = ({ data }) => {
@@ -97,35 +96,6 @@ const Home = ({ data }) => {
         </Container>
       </Box>
       <Box
-        pt={50}
-        width={`100%`}
-        background={useColorModeValue(`gray.100`, `gray.600`)}
-        borderBottomWidth="1px"
-      >
-        <Container mt="0">
-          <Flex
-            flexDirection="column"
-            textAlign="center"
-            align="center"
-            justify="space-between"
-          >
-            <Box maxW="900px" mt={`10`} mb={`20`}>
-              <WorksWithJS imageBG={useColorModeValue(`gray.100`, `white`)}>
-                <Heading as={`h2`} m="0" mb="3" size="2xl">
-                  Build rich JavaScript applications with WordPress and GraphQL
-                </Heading>
-                <Text fontSize="2xl" mt="10">
-                  WPGraphQL allows you to separate your CMS from your
-                  presentation layer. Content creators can use the CMS they
-                  know, while developers can use the frameworks and tools they
-                  love.
-                </Text>
-              </WorksWithJS>
-            </Box>
-          </Flex>
-        </Container>
-      </Box>
-      <Box
         width={`100%`}
         background={useColorModeValue(`gray.50`, `gray.700`)}
         borderBottomWidth="1px"
@@ -151,16 +121,6 @@ const Home = ({ data }) => {
               </Text>
             </Box>
           </Flex>
-          <Box
-            as={GatsbyImage}
-            image={data.queryPosts.childImageSharp.gatsbyImageData}
-            alt="Screenshot showing a GraphQL query for a list of posts"
-            h="40|56|80"
-            mt="12|14|16"
-            roundedTop="xl"
-            overflow="hidden"
-            boxShadow="0px -10px 8px 0px rgba(0, 0, 0, .125)"
-          />
         </Container>
       </Box>
       <Box
@@ -189,17 +149,6 @@ const Home = ({ data }) => {
               </Text>
             </Box>
           </Flex>
-
-          <Box
-            as={GatsbyImage}
-            image={data.multipleRootResources.childImageSharp.gatsbyImageData}
-            alt={"Screenshot showing a GraphQL Query for multiple resources"}
-            h="40|56|80"
-            mt="12|14|16"
-            roundedTop="xl"
-            overflow="hidden"
-            boxShadow="0px -10px 8px 0px rgba(0, 0, 0, .125)"
-          />
         </Container>
       </Box>
       <Box width={`100%`} background={useColorModeValue(`gray.50`, `gray.700`)}>
@@ -299,28 +248,3 @@ const Home = ({ data }) => {
 }
 
 export default Home
-
-export const query = graphql`
-  fragment GraphiQLImgFile on File {
-    childImageSharp {
-      gatsbyImageData(
-        layout: CONSTRAINED
-        quality: 90
-        width: 1300
-        formats: [AUTO, WEBP]
-      )
-    }
-  }
-
-  query HomepageQuery {
-    queryPosts: file(relativePath: { eq: "query-posts.png" }) {
-      ...GraphiQLImgFile
-    }
-
-    multipleRootResources: file(
-      relativePath: { eq: "query-multiple-root-resources.png" }
-    ) {
-      ...GraphiQLImgFile
-    }
-  }
-`
