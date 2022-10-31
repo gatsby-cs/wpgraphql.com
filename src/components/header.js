@@ -1,7 +1,7 @@
 import React from "react"
 import { chakra, Flex, HStack, Icon, IconButton } from "@chakra-ui/react"
 import Container from "./Container"
-// test push
+// test push 2
 const GithubIcon = (props) => (
   <svg viewBox="0 0 20 20" {...props}>
     <path
