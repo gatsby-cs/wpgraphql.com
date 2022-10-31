@@ -78,7 +78,7 @@ const plugins = [
       presets: [],
       debug: {
         graphql: {
-          writeQueriesToDisk: true,
+          writeQueriesToDisk: false,
           showQueryVarsOnError: true,
           panicOnError: false,
           onlyReportCriticalErrors: true,
